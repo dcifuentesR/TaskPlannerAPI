@@ -9,8 +9,6 @@ public class Task {
     private User responsible;
     private Date dueDate;
 
-    
-
     public String getDescription() {
         return description;
     }
