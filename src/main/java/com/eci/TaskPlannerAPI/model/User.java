@@ -1,6 +1,9 @@
 package com.eci.TaskPlannerAPI.model;
 
+
 public class User {
+
+    private String userId;
     private String name;
     private String email;
 
@@ -18,5 +21,18 @@ public class User {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public User(String name, String email) {
+        this.name = name;
+        this.email = email;
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 }
