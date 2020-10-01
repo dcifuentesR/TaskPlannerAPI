@@ -31,7 +31,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public User update(User user) {
         for (User u : users) {
-            if(u.getUserId().equals(user.getUserId()){
+            if(u.getUserId().equals(user.getUserId())){
                 users.remove(u);
                 users.add(user);
             }
@@ -48,6 +48,18 @@ public class UserServiceImpl implements UserService {
             }
         }
 
+    }
+
+    @Override
+    public User getUserById(String userId) {
+        User resp = null;
+
+        for (User user : users) {
+            if(user.getUserId().equals(userId)){
+                resp=user;
+            }
+        }
+        return resp;
     }
     
 }
