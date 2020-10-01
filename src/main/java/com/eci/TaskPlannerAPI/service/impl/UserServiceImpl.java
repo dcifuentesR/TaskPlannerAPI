@@ -7,15 +7,16 @@ import java.util.List;
 import com.eci.TaskPlannerAPI.model.User;
 import com.eci.TaskPlannerAPI.service.UserService;
 
+import org.springframework.stereotype.Service;
+
+@Service("us")
 public class UserServiceImpl implements UserService {
 
-    ArrayList<User> users = (ArrayList<User>) Arrays
-            .asList(new User[] { new User("dcifuentes", "daniel.cifuentes-r@mail.escuelaing.edu.co"),
-                    new User("Oscar", "oscar.mendez-z@escuelaing.edu.co"),
-                    new User("Claudia", "claudia.santiago@escuelaing.edu.co"),
-                    new User("Dagoberto", "dagoberto.borda@escuelaing.edu.co") });
-    
-    ;
+    private ArrayList<User> users = new ArrayList<User>(Arrays
+    .asList(new User("D123","dcifuentes", "daniel.cifuentes-r@mail.escuelaing.edu.co"),
+            new User("O123","Oscar", "oscar.mendez-z@escuelaing.edu.co"),
+            new User("C123","Claudia", "claudia.santiago@escuelaing.edu.co"),
+            new User("D124","Dagoberto", "dagoberto.borda@escuelaing.edu.co")));
 
     @Override
     public List<User> getAll() {
@@ -34,6 +35,7 @@ public class UserServiceImpl implements UserService {
             if(u.getUserId().equals(user.getUserId())){
                 users.remove(u);
                 users.add(user);
+                break;
             }
         }
         
@@ -45,6 +47,7 @@ public class UserServiceImpl implements UserService {
         for (User user : users) {
             if(user.getUserId().equals(userId)){
                 users.remove(user);
+                break;
             }
         }
 
